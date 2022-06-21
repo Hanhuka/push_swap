@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 18:20:41 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/06/02 13:06:07 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/06/20 15:36:03 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,9 @@ void	treat_side_chunks(t_stk **stacka, t_stk **stackb, t_vs var)
 		{
 			push_o(stacka, stackb, 2);
 			rotate_o(stacka, stackb, 2);
-			
 		}
 		else
-		{
 			push_o(stacka, stackb, 2);
-		}
 		i++;
 	}
 }

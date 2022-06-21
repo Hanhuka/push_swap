@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:31:21 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/02/28 18:54:04 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/06/20 15:51:57 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int			is_ordered(t_stk *stacka);
 
 //check_args
 int			is_number(char *str);
-int			repeats(int ac, char **av);
+int			repeats(char **args);
 int			beyond_extremes(int ac, char **av);
-int			checker(int ac, char **av);
+int			checker(char **args);
 
 //checker_utils
 void		treat_comm(char *str, t_stk **stacka, t_stk **stackb);
@@ -61,5 +61,15 @@ void		rotate(t_stk **stack);
 void		rotate_o(t_stk **stacka, t_stk **stackb, int opt);
 void		r_rotate(t_stk **stack);
 void		r_rotate_o(t_stk **stacka, t_stk **stackb, int opt);
+
+//push_swap_utils10
+char	*ft_strjoin2(char const *s1, char const *s2);
+char	**ft_split(char const *str, char c);
+
+//push_swap_utils11
+char	*ft_strdup(const char *s1);
+int		ft_strlen2(const char *str);
+char	**parse_everything(char **av);
+void	delete_matrix(char **matrix);
 
 #endif

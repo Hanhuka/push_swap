@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:24:48 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/03/08 10:40:12 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/06/21 12:30:33 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,17 @@ void	ft_lstclear(t_stk **stack)
 	}
 }
 
-void	create_stack(t_stk **stacka, t_stk **stackb, int ac, char **av)
+void	create_stack(t_stk **stacka, t_stk **stackb, char **args)
 {
 	int	i;
 
-	i = 1;
-	while (i < ac)
+	i = 0;
+	while (args[i])
 	{
-		while (i < ac && !av[i][0])
+		while (args[i] && !args[i][0])
 			i++;
-		if (i < ac)
-			stackadd_back(stacka, new_module(ft_atoi(av[i])));
+		if (args[i])
+			stackadd_back(stacka, new_module(ft_atoi(args[i])));
 		i++;
 	}
 	stackb = NULL;
@@ -116,17 +116,18 @@ int	main(int ac, char **av)
 {
 	t_stk	*stacka;
 	t_stk	*stackb;
-	int		i;
+	char	**args;
 
-	i = 1;
 	if (ac == 1)
 		return (1);
-	if (!checker(ac, av))
+	args = parse_everything(av);
+	if (!checker(args))
 	{
 		write(1, "ERROR\n", 6);
 		return (-1);
 	}
-	create_stack(&stacka, &stackb, ac, av);
+	create_stack(&stacka, &stackb, args);
+	delete_matrix(args);
 	if (stack_size(stacka) == 0)
 		return (0);
 	treat_input(&stacka, &stackb);

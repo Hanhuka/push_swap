@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 14:43:58 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/03/08 14:08:20 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/06/20 15:51:51 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 //# include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 //# define malloc(x) NULL
 
@@ -71,9 +72,9 @@ void		ft_lstclear(t_stk **stack);
 
 //check_args
 int			is_number(char *str);
-int			repeats(int ac, char **av);
+int			repeats(char **args);
 int			beyond_extremes(int ac, char **av);
-int			checker(int ac, char **av);
+int			checker(char **args);
 int			only_space(char *str);
 
 //sorter
@@ -137,6 +138,16 @@ int			get_biggest(t_stk *stack);
 void		size_3(t_stk **stacka, t_stk **stackb);
 void		put_back(t_stk **stacka, t_stk **stackb, int opt);
 void		order_stack(t_stk **stacka, t_stk **stackb);
+
+//push_swap_utils10
+char	*ft_strjoin2(char const *s1, char const *s2);
+char	**ft_split(char const *str, char c);
+
+//push_swap_utils11
+char	*ft_strdup(const char *s1);
+int		ft_strlen2(const char *str);
+char	**parse_everything(char **av);
+void	delete_matrix(char **matrix);
 
 //push_swap_utils_test
 int			*make_array(t_stk *stack);
