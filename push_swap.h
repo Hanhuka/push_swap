@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 14:43:58 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/06/20 15:51:51 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/06/21 15:51:59 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,14 +140,14 @@ void		put_back(t_stk **stacka, t_stk **stackb, int opt);
 void		order_stack(t_stk **stacka, t_stk **stackb);
 
 //push_swap_utils10
-char	*ft_strjoin2(char const *s1, char const *s2);
-char	**ft_split(char const *str, char c);
+char		*ft_strjoin2(char const *s1, char const *s2);
+char		**ft_split(char const *str, char c);
 
 //push_swap_utils11
-char	*ft_strdup(const char *s1);
-int		ft_strlen2(const char *str);
-char	**parse_everything(char **av);
-void	delete_matrix(char **matrix);
+char		*ft_strdup(const char *s1);
+int			ft_strlen2(const char *str);
+char		**parse_everything(char **av);
+void		delete_matrix(char **matrix);
 
 //push_swap_utils_test
 int			*make_array(t_stk *stack);

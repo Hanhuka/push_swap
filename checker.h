@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 16:31:21 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/06/20 15:51:57 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/06/21 15:52:08 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ void		r_rotate(t_stk **stack);
 void		r_rotate_o(t_stk **stacka, t_stk **stackb, int opt);
 
 //push_swap_utils10
-char	*ft_strjoin2(char const *s1, char const *s2);
-char	**ft_split(char const *str, char c);
+char		*ft_strjoin2(char const *s1, char const *s2);
+char		**ft_split(char const *str, char c);
 
 //push_swap_utils11
-char	*ft_strdup(const char *s1);
-int		ft_strlen2(const char *str);
-char	**parse_everything(char **av);
-void	delete_matrix(char **matrix);
+char		*ft_strdup(const char *s1);
+int			ft_strlen2(const char *str);
+char		**parse_everything(char **av);
+void		delete_matrix(char **matrix);
 
 #endif
