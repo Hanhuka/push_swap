@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 16:24:48 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/06/21 12:30:33 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/10/20 15:13:03 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	create_stack(t_stk **stacka, t_stk **stackb, char **args)
 {
 	int	i;
 
+	(void)stackb;
 	i = 0;
 	while (args[i])
 	{
@@ -99,15 +100,15 @@ void	treat_input(t_stk **stacka, t_stk **stackb)
 	{
 		treat_comm(str, stacka, stackb);
 		check_spaces(str);
-	}
-	while (str != NULL)
+	}	
+	while (str)
 	{
+		free(str);
 		str = get_next_line(0);
 		if (str)
 		{
 			treat_comm(str, stacka, stackb);
 			check_spaces(str);
-			free(str);
 		}
 	}
 }
@@ -118,6 +119,8 @@ int	main(int ac, char **av)
 	t_stk	*stackb;
 	char	**args;
 
+	stacka = NULL;
+	stackb = NULL;
 	if (ac == 1)
 		return (1);
 	args = parse_everything(av);

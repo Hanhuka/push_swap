@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 18:20:41 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/06/20 15:36:03 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/10/17 17:55:09 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,7 @@ int	find_l_ocur2(t_stk *stack, t_lm lm)
 void	treat_odd(t_stk **stacka, t_stk **stackb, t_vs var)
 {
 	int		i;
-	t_lm	lm;
 
-	lm.min = var.array[var.pos];
-	lm.max = var.array[var.pos + var.ds - 1];
-	lm.min2 = var.array[var.pos];
-	lm.max2 = var.array[var.pos + var.ds - 1];
 	i = 0;
 	while (i < var.ds)
 	{
@@ -102,9 +97,6 @@ void	treat_side_chunks(t_stk **stacka, t_stk **stackb, t_vs var)
 
 void	treat_else(t_stk **stacka, t_stk **stackb, t_vs var)
 {
-	int	i;
-
-	i = 0;
 	while (var.pos >= 0)
 	{
 		treat_side_chunks(stacka, stackb, var);

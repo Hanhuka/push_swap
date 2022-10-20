@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:16:32 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/03/11 11:04:48 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/10/19 12:07:32 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ int	stack_size(t_stk *stack)
 
 	i = 0;
 	ptr = stack;
+	if (!stack)
+		return (0);
 	while (ptr)
 	{
 		ptr = ptr->next;

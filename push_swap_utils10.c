@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 13:59:32 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/06/21 12:28:03 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/10/17 18:48:18 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ char	*ft_strjoin2(char const *s1, char const *s2)
 	int		size2;
 
 	if (!s1 && s2)
-		return ((char *)s2);
+		return (ft_strdup(s2));
 	if (s1 && !s2)
-		return ((char *)s1);
+		return (ft_strdup(s1));
 	size1 = ft_strlen2(s1);
 	size2 = ft_strlen2(s2);
 	return (joiner(s1, s2, size1, size2));
@@ -78,7 +78,7 @@ static char	*ft_substr(char const *str, int start, int end)
 	i = 0;
 	if (start > end)
 		return (NULL);
-	sub = malloc(end - start + 1);
+	sub = malloc(end - start + 2);
 	while (start <= end)
 	{
 		sub[i] = str[start];

@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 14:26:47 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/06/21 12:31:37 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/10/20 15:08:33 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,29 +40,71 @@ int	ft_strlen2(const char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (-1);
 	while (str[i])
 		i++;
 	return (i);
 }
 
-static	void	parse(int i, char **join, char ***av)
+// static	void	parse(int i, char **join, char ***av)
+// {
+// 	char	*space;
+// 	char	*cpy;
+
+// 	cpy = ft_strdup(*join);
+// 	if (*join)
+// 		free(*join);
+// 	space = ft_strdup(" ");
+// 	*join = ft_strjoin2(cpy, space);
+// 	free(space);
+// 	if (cpy)
+// 		free(cpy);
+// 	cpy = ft_strdup(*join);
+// 	if (*join)
+// 		free(*join);
+// 	*join = ft_strjoin2(cpy, (*av)[i]);
+// }
+
+static	char	*parse(int i, char *join, char **av)
 {
 	char	*space;
 	char	*cpy;
+	char	*joined;
 
-	cpy = ft_strdup(*join);
-	if (*join)
-		free(*join);
+	cpy = ft_strdup(join);
 	space = ft_strdup(" ");
-	*join = ft_strjoin2(cpy, space);
+	if (join)
+		free(join);
+	join = ft_strjoin2(cpy, space);
 	free(space);
 	if (cpy)
 		free(cpy);
-	cpy = ft_strdup(*join);
-	if (*join)
-		free(*join);
-	*join = ft_strjoin2(cpy, (*av)[i]);
+	cpy = ft_strdup(join);
+	if (join)
+		free(join);
+	joined = ft_strjoin2(cpy, av[i]);
+	if (cpy)
+		free(cpy);
+	return (joined);
 }
+
+// char	**parse_everything(char **av)
+// {
+// 	int		i;
+// 	char	*join;
+// 	char	**parsed;
+
+// 	i = 1;
+// 	while (av[i])
+// 	{
+// 		parse(i, &join, &av);
+// 		i++;
+// 	}
+// 	parsed = ft_split(join, ' ');
+// 	free(join);
+// 	return (parsed);
+// }
 
 char	**parse_everything(char **av)
 {
@@ -70,10 +112,11 @@ char	**parse_everything(char **av)
 	char	*join;
 	char	**parsed;
 
+	join = NULL;
 	i = 1;
 	while (av[i])
 	{
-		parse(i, &join, &av);
+		join = parse(i, join, av);
 		i++;
 	}
 	parsed = ft_split(join, ' ');

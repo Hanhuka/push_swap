@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 03:55:55 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/03/10 12:11:39 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/10/19 12:05:58 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ int	find_smallest(t_stk *stack)
 
 int	get_smallest(t_stk *stack)
 {
-	int		pos;
 	int		val;
 	int		i;
 	int		size;
@@ -93,7 +92,6 @@ int	get_smallest(t_stk *stack)
 
 	size = stack_size(stack);
 	val = stack->value;
-	pos = 1;
 	i = 1;
 	ptr = stack;
 	while (i <= size)
@@ -101,7 +99,6 @@ int	get_smallest(t_stk *stack)
 		if (ptr->value < val)
 		{
 			val = ptr->value;
-			pos = i;
 		}
 		i++;
 		ptr = ptr->next;

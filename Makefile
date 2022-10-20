@@ -6,12 +6,12 @@
 #    By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/26 16:26:20 by ralves-g          #+#    #+#              #
-#    Updated: 2022/06/21 12:29:56 by ralves-g         ###   ########.fr        #
+#    Updated: 2022/10/17 18:03:40 by ralves-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -fsanitize=address -g
 RM			= rm -f
 
 NAME		= push_swap
@@ -37,7 +37,7 @@ OBJS_B		= $(SRCS_B:.c=.o)
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			$(CC) $(CFLAGS) $(SRCS) -c
+			$(CC) $(SRCS) -c
 			$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
 bonus:		$(NAME_B)

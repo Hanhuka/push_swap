@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 03:48:36 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/03/11 17:44:59 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/10/17 17:55:24 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,8 @@ void	treat_chunk(t_stk **stacka, t_stk **stackb, int div_size)
 	int		pos;
 	int		i;
 	int		*array;
-	t_stk	*ptr;
 	int		size;
 
-	ptr = *stacka;
 	pos = 0;
 	array = get_array(*stacka);
 	size = stack_size(*stacka);

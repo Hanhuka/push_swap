@@ -6,7 +6,7 @@
 /*   By: ralves-g <ralves-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 14:43:33 by ralves-g          #+#    #+#             */
-/*   Updated: 2022/03/08 13:56:13 by ralves-g         ###   ########.fr       */
+/*   Updated: 2022/10/19 12:02:44 by ralves-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ void	rotate(t_stk **stack)
 {
 	t_stk	*ptr;
 	t_stk	*ptr2;
-	int		i;
 
-	i = 1;
 	if ((*stack)->next == NULL)
 		return ;
 	ptr = *stack;
